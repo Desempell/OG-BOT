@@ -1,7 +1,7 @@
 const Discord = require(`discord.js`);
 const client = new Discord.Client();
 
-client.login("NDE1MTM4MzE3MzgyOTc1NTAw.DWxjQQ.nxBUS90dWTE6qIfF7yTyUvTsL9g");
+client.login("");
 
 if(message.author.bot) return;
 if(message.content.indexOf(process.env.PREFIX) !== 0) return;
