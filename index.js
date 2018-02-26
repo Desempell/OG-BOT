@@ -1,80 +1,79 @@
-const Discord = require("discord.js");
-const robot = new Discord.Client();
+const Discord = require(`discord.js`);
+const client = new Discord.Client();
 
-robot.login("");
-var prefix = 's!'
+client.login("NDE1MTM4MzE3MzgyOTc1NTAw.DWxjQQ.nxBUS90dWTE6qIfF7yTyUvTsL9g");
 
-console.log('Start..');
+if(message.author.bot) return;
+if(message.content.indexOf(process.env.PREFIX) !== 0) return;
+const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
 
-robot.on('ready',()=>{  
-  robot.user.setActivity('Working...');
-});
 
-robot.on('message', (message) => {
+client.on("message",(message)=>{
+if(message.content=="og!Dark")
+    message.reply("О,вы тоже знаете моего создателя?")});
 
-    if(message.author.bot) return;
+    client.on("message",(message)=>{
+        if(message.content=="og!Egorka"){
+            message.reply("Это тот чсвшный модератор? :thinking:")};
+      });     
 
-    if (message.content == (prefix)+'help'){
-        message.channel.send({embed: {
-          author: {
-            name: robot.user.username,
-            icon_url: robot.user.avatarURL
+    client.on('message', message => {
+        if (message.content == "og!Avatar") {
+            message.reply(message.author.avatarURL);
+        }
+    });
+
+    client.on("message",message => {
+        if (message.content == "og!info") {
+            message.reply(message.channel.send({embed: {
+                color: 6667003,
+                author: {
+                  name: client.user.username,
+                  icon_url: client.user.avatarURL
+                },
+                title: "Орден Геймеров",
+                description: "Это сервер для истинных геймеров!",
+                fields: [{
+                    name: "Информация",
+                    value: "Вы можете прочитать правила в канале #rules и посмотреть систему ролей в #welcome"
+                  },
+         ]
+            }}))
+        }});
+    
+    client.on("message",message => {
+        if (message.content == "og!help") {
+       message.reply(message.channel.send({embed: {
+        color: 5367703,
+        author: {
+          name: client.user.username,
+          icon_url: client.user.avatarURL
+        },
+        title: "Это список команд",
+        description: "Этот список не конечный,новые команды скоро будут.",
+        fields: [{
+            name: "og!Dark",
+            value: "- Вопрос от бота"
           },
-            color: 3447003,
-
-            fields: [{
-                name: "Мои комады:",
-                value: '**__'+prefix+'avatar\n'+prefix+"Seven\n"+prefix+'Yoba\n'+prefix+'Dark\n'+prefix+'EgorKa\n'+prefix+'Тёма\n'+prefix+'Enoteg\n'+prefix+'Сёма__** (*Don\'t use this*)\n...\n__In developing!__\n...'
-              },
-              {
-                name: "Мой сервер:",
-                value: "**Заходи, здесь весело -** [Орден Геймеров](https://discord.gg/FTgCAj6)**!**"
-              }
-            ],
-            timestamp: new Date(),
-            footer: {
-              text: "© SevenTrio"
-            }
-          }
-    
-        });
-        return;
-    }  
-    if(message.content == (prefix +'Seven')){
-      message.reply('это похоже на моего автора!');
-      return;
-    }
-    if(message.content == (prefix +'Yoba')){
-      message.reply(':YOBA:');
-      return;
-    }
-    if(message.content == (prefix +'Dark')){
-      message.reply('о великий глава сервера!');
-      return;
-    }
-    if(message.content == (prefix +'EgorKa')){
-      message.reply('вы ошиблись, это Арина.');
-      return;
-    }
-    if(message.content == (prefix +'Тёма')){
-      message.reply('nya :Nyasha:');
-      return;
-    }
-    if(message.content == (prefix +'Enoteg')){
-      message.reply('больше не :nyasha:, :confounded:');
-      return;
-    }
-    if(message.content == (prefix +'pidr')){
-      message.reply('вот он - <@248521740945195008>!');
-      return;
-    }
-    if(message.content == (prefix +'Сёма')){
-      message.reply('**я не Сёма!** :rage:');
-      return;
-    }
-    if(message.content == (prefix +'avatar')){
-      message.reply(message.author.avatarURL);
-      return;
-    }
-    
-});
+          {
+            name: "og!Egorka",
+            value: "- Чудо вопрос"
+          },
+          {
+            name: "og!info",
+            value: "- Информация о нашем сервере"
+          },
+         {
+            name: "og!Avatar",
+            value: "- Бот скинет вашу аватарку"
+        },
+        ],
+        timestamp: new Date(),
+        footer: {
+          icon_url: client.user.avatarURL,
+          text: "© Dark"
+        }
+      }
+    })
+)}});      
