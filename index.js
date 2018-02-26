@@ -2,7 +2,7 @@ const Discord = require(`discord.js`);
 const client = new Discord.Client();
 const prefix = "og!";
  
-client.login("NDE1MTM4MzE3MzgyOTc1NTAw.DXWwJg.Nfw6PdyujhhCnvfC6Vj_QDBVZOA").catch(err => {console.log(err);});
+client.login("").catch(err => {console.log(err);});
  
  
 client.on("message", async (message) =>{
