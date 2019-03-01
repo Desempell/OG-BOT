@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = 'd!'
 
-client.login("BOT_TOKEN");
+client.login(process.env.BOT_TOKEN);
 console.log(`Всё ок`);
 
 client.on("ready", () => {
