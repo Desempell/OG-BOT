@@ -1,6 +1,6 @@
 const Discord = require(`discord.js`);
 const client = new Discord.Client();
-const prefix = 'd!'
+const prefix = 'd!';
 
  client.login(process.env.BOT_TOKEN).catch(err => {console.log(err)});
 console.log(`Всё ок`);
