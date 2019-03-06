@@ -1,8 +1,9 @@
-const Discord = require(`discord.js`);
+const Discord = require("discord.js");
 const client = new Discord.Client();
-const prefix = 'd!';
+const prefix = 'd!'
 
  client.login(process.env.BOT_TOKEN).catch(err => {console.log(err)});
+
 console.log(`Всё ок`);
 
 client.on("ready", () => {
@@ -37,7 +38,6 @@ client.on("message", (message) => {
     embed.setTitle(`Ответ`);
     embed.setColor(0xffd9d9);
     embed.setDescription(a[(Math.floor(Math.random () * a.length ))]);
-    embed.setAuthor(`name`);
     if(message.content.startsWith(prefix + "ruletka ")) {
         message.reply(embed)
     }
@@ -59,3 +59,20 @@ client.on(`message`, (message) => {
     }
 });
  
+client.on(`message`, (message) => {
+    if(message.content.match(new RegExp('^'+ prefix +'role (.{1,20}) #([a-f0-9]{6,6})$', 'i' ))) {
+    
+    let role =  message.content.match(new RegExp(prefix +'role (.{1,20}) #([a-f0-9]{6,6})', 'i'))
+
+    message.guild.createRole({
+        position: 2 ,
+        name: role[1],
+        color: role[2] })
+
+        const e = new Discord.RichEmbed();
+
+        e.setTitle(`Роль создана.`);
+        e.setColor(0xffd9d9);
+    message.reply(e);                        
+
+}});
