@@ -69,6 +69,9 @@ client.on(`message`, (message) => {
         name: role[1],
         color: role[2] })
 
+       .then(role => message.member.addRole(role.id)) 
+
+
         const e = new Discord.RichEmbed();
 
         e.setTitle(`Роль создана.`);
