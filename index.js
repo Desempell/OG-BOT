@@ -36,7 +36,7 @@ client.on("message", (message) => {
     const embed = new Discord.RichEmbed();
     embed.setTimestamp();
     embed.setTitle(`Ответ`);
-    embed.setColor(0xffd9d9);
+    embed.setColor(0xc2fcf3);
     embed.setDescription(a[(Math.floor(Math.random () * a.length ))]);
     if(message.content.startsWith(prefix + "ruletka ")) {
         message.reply(embed)
@@ -44,7 +44,7 @@ client.on("message", (message) => {
     else if(message.content === prefix + "ruletka") {
     const embedd = new Discord.RichEmbed();
     embedd.setDescription(`Напишите вопрос`);
-    embedd.setColor(0xFFFFFF);    
+    embedd.setColor(0xc2fcf3);    
     embedd.setTimestamp();
         message.reply(embedd)
     }
@@ -72,7 +72,7 @@ client.on(`message`, (message) => {
         const e = new Discord.RichEmbed();
 
         e.setTitle(`Роль создана.`);
-        e.setColor(0xffd9d9);
+        e.setColor(0xc2fcf3);
     message.reply(e);                        
 
 }});
