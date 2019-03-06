@@ -43,10 +43,10 @@ client.on("message", (message) => {
     }
     else if(message.content === prefix + "ruletka") {
     const embedd = new Discord.RichEmbed();
-    embedd.setDescription(`Напишите вопрос`);
+    embedd.setTitle(`Напишите вопрос`);
     embedd.setColor(0xc2fcf3);    
     embedd.setTimestamp();
-        message.reply(embedd)
+        message.channel.send(embedd)
     }
     
 });
@@ -73,6 +73,6 @@ client.on(`message`, (message) => {
 
         e.setTitle(`Роль создана.`);
         e.setColor(0xc2fcf3);
-    message.reply(e);                        
+    message.channel.send(e);                        
 
 }});
