@@ -7,7 +7,7 @@ const prefix = 'd!'
 console.log(`Всё ок`);
 
 client.on("ready", () => {
-    client.channels.get("529981802497179648").send(`Бот включился. На сервере ${client.users.size} участника. Всего серверов со мной ${client.guilds.size}. Количество каналов равно ${client.channels.size}-ти.`)
+    client.channels.get("549601149645488151").send(`Бот включился. На сервере ${client.users.size} участника. Всего серверов со мной ${client.guilds.size}. Количество каналов равно ${client.channels.size}-ти.`)
 client.user.setActivity(`Codding`);
 });
 
