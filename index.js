@@ -79,3 +79,25 @@ client.on(`message`, (message) => {
     message.channel.send(e);                        
 
 }});
+client.on(`message`, (message) => { 
+    let args = message.content.slice(prefix.length).split(/ +/);
+    const commandName = args.shift().toLowerCase();
+    if(commandName === 'deleterole') {
+        let rolename = args.join(" ");
+        rolename = message.guild.roles.find('name', rolename);
+        if(!rolename) return;
+        
+     let membersWithTheRole = message.guild.members.filter(x => x.roles.has(rolename.id)).size; 
+     
+     if(membersWithTheRole === 1 && message.member.roles.has(rolename.id)) {
+        role.delete()  
+
+    
+    }
+        const v = new Discord.RichEmbed();
+
+        v.setTitle(`Роль удалена.`);
+        v.setColor(0xc2fcf3);
+    message.channel.send(v);        
+      
+}});
