@@ -90,14 +90,15 @@ client.on(`message`, (message) => {
      let membersWithTheRole = message.guild.members.filter(x => x.roles.has(rolename.id)).size; 
      
      if(membersWithTheRole === 1 && message.member.roles.has(rolename.id)) {
-        role.delete()  
+        rolename.delete() 
 
-    
-    }
         const v = new Discord.RichEmbed();
 
         v.setTitle(`Роль удалена.`);
         v.setColor(0xc2fcf3);
-    message.channel.send(v);        
+    message.channel.send(v);     
+    }
+         
       
 }});
+
