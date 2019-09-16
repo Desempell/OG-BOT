@@ -98,7 +98,14 @@ client.on(`message`, (message) => {
         v.setColor(0xc2fcf3);
     message.channel.send(v);     
     }
-         
+     else {
+        const g = new Discord.RichEmbed();
+
+        g.setTitle(`Данная роль не принадлежит вам`);
+        g.setColor(0xc2fcf3);
+    message.channel.send(g); 
+      }   
+    
       
 }});
 
